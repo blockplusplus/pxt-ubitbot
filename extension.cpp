@@ -1,7 +1,9 @@
 #include "pxt.h"
 #include "libs/inc/RegisteredJack.h"
+#include "libs/inc/PCA8574.h"
 
 RegisteredJacks rj;
+PCA8574 expander(0, (PinName)UBITBOT_PCA8574_0_INT_PIN, uBit.i2c);
 
 
 using namespace pxt;

@@ -19,6 +19,8 @@
 #define UBITBOT_J2_S0                    MICROBIT_ID_IO_P2
 #define UBITBOT_J2_S1                    MICROBIT_ID_IO_P15
 
+#define UBITBOT_PCA8574_0_INT_PIN        MICROBIT_ID_IO_P16
+
 
 
 #endif

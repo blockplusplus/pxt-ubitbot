@@ -13,7 +13,8 @@
         "shims.d.ts",
         "enums.d.ts",
         "libs/inc/RegisteredJack.h",
-        "libs/inc/ubitBotConfig.h"
+        "libs/inc/ubitBotConfig.h",
+        "libs/inc/PCA8574.h"
     ],
     "testFiles": [
         "tests.ts"
