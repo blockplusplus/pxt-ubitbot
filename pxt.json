@@ -12,7 +12,8 @@
         "extension.cpp",
         "shims.d.ts",
         "enums.d.ts",
-        "libs/inc/RegisteredJack.h"
+        "libs/inc/RegisteredJack.h",
+        "libs/inc/ubitBotConfig.h"
     ],
     "testFiles": [
         "tests.ts"
