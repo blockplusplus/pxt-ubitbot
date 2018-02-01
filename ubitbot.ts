@@ -31,4 +31,14 @@ namespace ubitbot {
             ? left : right;
     }
 
+
+    /**
+     * Testing C++ Functions
+     */
+    //% blockId=ubitbot_cpp_testing block="cpp testing"
+    //% advanced=true shim=ubitbot::cppTesting
+    export function cppTesting() : void {
+        return;
+    }
+
 }

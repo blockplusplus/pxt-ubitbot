@@ -11,7 +11,8 @@
         "ubitbot.ts",
         "extension.cpp",
         "shims.d.ts",
-        "enums.d.ts"
+        "enums.d.ts",
+        "libs/inc/RegisteredJack.h"
     ],
     "testFiles": [
         "tests.ts"

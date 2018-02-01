@@ -2,6 +2,7 @@
 
 let keynote = 0
 keynote = ubitbot.frequencyToKey(698)
+ubitbot.cppTesting()
 
 basic.forever(() => {
     basic.showIcon(IconNames.Happy)
