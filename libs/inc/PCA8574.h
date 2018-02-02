@@ -53,9 +53,14 @@ public:
     }
 
     void dir(uint8_t direction, uint8_t mask, uint8_t value) {
+        uint8_t data;
         uint8_t dir = direction & mask;
         uint8_t output = value & mask;
-        uint8_t data = (~dir) & output;
+
+        // Keep other pin the same direction
+        dir |= _dir & (~mask);
+
+        data = (~dir) & output;
 
         write(data);
 
