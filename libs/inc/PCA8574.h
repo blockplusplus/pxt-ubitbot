@@ -105,4 +105,17 @@ private:
     uint8_t _dir;
 };
 
+class IOExpander {
+
+public:
+    PCA8574 port[0];
+    PCA8574 port0;
+
+public:
+    IOExpander():
+        port0(0, (PinName)UBITBOT_PCA8574_0_INT_PIN, UBITBOT_I2C_INSTANCE) {
+
+    }
+};
+
 #endif
