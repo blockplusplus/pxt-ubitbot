@@ -45,7 +45,7 @@ public:
 
 public:
 
-    ExpansionDigitalOut(ExpansionPinName pin, int value = 1) :
+    ExpansionDigitalOut(ExpansionPinName pin, int value) :
         _port_id(PCA8574_ID(pin)),
         _pin_id(PCA8574_INTERNAL_PINNAME(pin)),
         port(PCA8574_INSTANCE(pin)) {
@@ -77,4 +77,46 @@ private:
     int _pin_mask;
 };
 
+
+class ExpansionDigitalInOut {
+
+public:
+
+    PCA8574 & port;
+
+public:
+
+    ExpansionDigitalInOut(ExpansionPinName pin, ExpansionPinDirection direction, int value) :
+        _port_id(PCA8574_ID(pin)),
+        _pin_id(PCA8574_INTERNAL_PINNAME(pin)),
+        port(PCA8574_INSTANCE(pin)) {
+
+        _pin_mask = 1 << _pin_id;
+
+        // Set the pin to diretion in / out
+        port.dir(direction << _pin_id, _pin_mask, value << _pin_id);
+    }
+
+    void input() {
+        port.dir(EPIN_INPUT << _pin_id, _pin_mask, 0);
+    }
+
+    void output(int value) {
+        port.dir(EPIN_OUTPUT << _pin_id, _pin_mask, value << _pin_id);
+    }
+
+    int read() {
+        return (port.input(_pin_mask) >> _pin_id) & 0x01;
+    }
+
+    void write(int value) {
+        port.output((value & 0x01) << _pin_id, _pin_mask);
+    }
+
+private:
+
+    int _port_id;
+    int _pin_id;
+    int _pin_mask;
+};
 #endif
