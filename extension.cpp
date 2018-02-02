@@ -13,7 +13,10 @@ namespace ubitbot {
     //%
     void cppTesting() {
         GreyRegisteredJack grey(bot.rj.j[0]);
+        ExpansionDigitalOut exp_pin1(EP1);
+
         grey.serial.puts("Hello World\n");
         bot.io.port[0].output(0x01, 0x03);
+        exp_pin1.low();
     }
 }
