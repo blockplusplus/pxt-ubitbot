@@ -20,4 +20,8 @@ public:
 
 extern Bot bot;
 
+
+
+#include "ExpansionDigitalInOut.h"
+
 #endif

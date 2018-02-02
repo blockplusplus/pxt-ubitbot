@@ -14,6 +14,7 @@
         "enums.d.ts",
         "libs/inc/RegisteredJack.h",
         "libs/inc/PCA8574.h",
+        "libs/inc/ExpansionDigitalInOut.h",
         "libs/inc/ubitBotConfig.h",
         "libs/inc/ubitBot.h"
     ],

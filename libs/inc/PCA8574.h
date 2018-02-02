@@ -4,7 +4,8 @@
 #define PCA8574_I2C_BASE_ADDRESS         0x40
 #define PCA8574_ADDRESS_BY_ID(id)        (PCA8574_I2C_BASE_ADDRESS | (id & 0x0E))
 #define PCA8574_ADDRESS_BY_PIN(pin)      (PCA8574_I2C_BASE_ADDRESS | (pin % 8))
-#define PCA8574_INTERNAL_PINNAME(pin)    (pin / 8)
+#define PCA8574_INTERNAL_PINNAME(pin)    (pin % 8)
+#define PCA8574_ID(pin)                  (pin / 8)
 
 typedef enum {
     EP0 = 0,
