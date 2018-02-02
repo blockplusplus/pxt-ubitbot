@@ -1,10 +1,7 @@
 #include "pxt.h"
-#include "libs/inc/RegisteredJack.h"
-#include "libs/inc/PCA8574.h"
+#include "libs/inc/ubitBot.h"
 
-RegisteredJacks rj;
-PCA8574 expander(0, (PinName)UBITBOT_PCA8574_0_INT_PIN, uBit.i2c);
-
+Bot bot;
 
 using namespace pxt;
 namespace ubitbot {
@@ -15,7 +12,8 @@ namespace ubitbot {
 
     //%
     void cppTesting() {
-        GreyRegisteredJack grey(rj.j[0]);
+        GreyRegisteredJack grey(bot.rj.j[0]);
         grey.serial.puts("Hello World\n");
+        bot.io.port[0].output(0x01, 0x03);
     }
 }
